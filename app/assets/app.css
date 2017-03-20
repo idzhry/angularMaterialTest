@@ -1,0 +1,28 @@
+html, body {
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-size:14px;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+.custom md-input-container {
+  margin: 0 0;
+}
+.custom md-input-container .normal-color {
+  color: rgba(0,0,0,0.9)
+}
+
+.custom .my-grid {
+  height: 100%;
+}
+
+.custom .group-header {
+  color: red;
+  border-top: 1px solid;
+  border-color: #d4d4d4;
+}
+
+
+.custom .group-content {
+  color: rgba(0,0,0,0);
+}
