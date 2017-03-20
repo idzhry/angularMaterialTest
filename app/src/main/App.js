@@ -15,21 +15,67 @@ var app = angular.module('starterApp', ['ngMaterial', 'ui.router', 'ui.grid', 'u
       test1: "testestt1"
     };
 
-    self.groupCellClass = function(grid, row, col, rowRenderIndex, colRenderIndex ) {
-      var renderRow = grid.renderContainers.body.renderedRows;
-      if (rowRenderIndex == 0) {
-        return "group-header";
+    self.rowBreakFlgMap = {};
+    self.makeCellClass = function(grid, row, col, rowRenderIndex, colRenderIndex, keyFields, groupFields) {
+      if (rowRenderIndex == 0 && colRenderIndex == 0) {
+        self.rowBreakFlgMap = {};
+      }
+      var bMap = self.rowBreakFlgMap;
+      var breakFlg = true;
+      if (bMap[rowRenderIndex]) {
+        breakFlg = bMap[rowRenderIndex];
       } else {
-        var value1 = row.entity["col1"];
-        var value2 = row.entity["col2"];
-        var preValue1 = renderRow[rowRenderIndex -1].entity["col1"];
-        var preValue2 = renderRow[rowRenderIndex -1].entity["col2"];
-        if (value1 == preValue1 && value2 == preValue2) {
-          return "group-content";
-        } else {
-          return "group-header";
+        var renderRow = grid.renderContainers.body.renderedRows;
+        if (rowRenderIndex != 0) {
+          for (var j=0;j<keyFields.length;j++) {
+            var keyField = keyFields[j];
+            if (row.entity[keyField] != renderRow[rowRenderIndex -1].entity[keyField]) {
+              breakFlg = false;
+              break;
+            }
+          }
+        }
+        bMap[rowRenderIndex] = breakFlg;
+      }
+      var rtnClass = "";
+      if (breakFlg) {
+        rtnClass = rtnClass + " group-divider";
+        if (groupFields.indexOf(col.name) > -1) {
+          rtnClass = rtnClass + " group-header";
+        }
+      } else {
+        if (groupFields.indexOf(col.name) > -1) {
+          rtnClass = rtnClass + " group-content";
         }
       }
+      if (rowRenderIndex == grid.renderContainers.body.renderedRows.length -1) {
+        if (groupFields.indexOf(col.name) > -1) {
+          rtnClass = rtnClass + " group-last";
+        }
+      }
+      return rtnClass;
+
+    };
+
+    self.groupCellClass = function(grid, row, col, rowRenderIndex, colRenderIndex ) {
+
+      return self.makeCellClass(grid, row, col, rowRenderIndex
+          , colRenderIndex, ["col1","col2"],["col1","col2"]);
+
+      //var renderRow = grid.renderContainers.body.renderedRows;
+      //if (rowRenderIndex == 0) {
+      //  return "group-header";
+      //} else {
+      //  var value1 = row.entity["col1"];
+      //  var value2 = row.entity["col2"];
+      //  var preValue1 = renderRow[rowRenderIndex -1].entity["col1"];
+      //  var preValue2 = renderRow[rowRenderIndex -1].entity["col2"];
+      //  if (value1 == preValue1 && value2 == preValue2) {
+      //    return "group-content";
+      //  } else {
+      //    return "group-header";
+      //  }
+      //}
     }
 
 
@@ -54,6 +100,12 @@ var app = angular.module('starterApp', ['ngMaterial', 'ui.router', 'ui.grid', 'u
         { name:'col13', field: 'col13', enableCellEdit:false,width: 100},
         { name:'col14', field: 'col14', enableCellEdit:false,width: 100}
       ]
+    };
+
+    self.gridOptions.onRegisterApi = function(gridApi){
+      self.gridApi = gridApi;
+      //gridApi.core.on.rowsVisibleChanged(null,function() {
+      //});
     };
 
     //var gData = [];

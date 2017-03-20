@@ -16,13 +16,18 @@ html, body {
   height: 100%;
 }
 
-.custom .group-header {
-  color: red;
+
+.custom .group-divider {
   border-top: 1px solid;
   border-color: #d4d4d4;
 }
-
-
+.custom .group-header {
+  color: red;
+}
 .custom .group-content {
   color: rgba(0,0,0,0);
+}
+.custom .group-last {
+  border-bottom: 1px solid;
+  border-color: #d4d4d4;
 }
