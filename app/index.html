@@ -24,8 +24,8 @@
 
   </head>
 
-  <body ng-app="starterApp" layout="column" ng-controller="MainCtrl as ml" ng-cloak class="custom">
-
+  <body ng-app="starterApp" layout="column" ng-controller="MainCtrl as ml" class="custom">
+  <div flex layout="column" ng-cloak>
     <md-toolbar >
       <div class="md-toolbar-tools">
         <md-button hide-gt-sm ng-click="ml.toggleList()" class="md-icon-button" aria-label="show side menu">
@@ -45,37 +45,37 @@
 
     <div flex layout="row">
 
-        <md-sidenav  ng-click="ml.toggleList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" >
-          <md-list>
-            <md-list-item ng-repeat="it in ml.menuItems">
-                <md-button ng-click="ml.selectItem(it)" ng-class="{'selected' : it.id === ml.selected.id }">
-                  <md-icon md-font-set="material-icons">{{it.iconName}}</md-icon>
-                  {{it.name}}
-                </md-button>
-            </md-list-item>
-          </md-list>
-        </md-sidenav>
+      <md-sidenav  ng-click="ml.toggleList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" >
+        <md-list>
+          <md-list-item ng-repeat="it in ml.menuItems">
+            <md-button ng-click="ml.selectItem(it)" ng-class="{'selected' : it.id === ml.selected.id }">
+              <md-icon md-font-set="material-icons">{{it.iconName}}</md-icon>
+              {{it.name}}
+            </md-button>
+          </md-list-item>
+        </md-list>
+      </md-sidenav>
 
-        <div flex id="content" ui-view layout="column">
-        </div>
+      <div flex id="content" ui-view layout="column">
+      </div>
 
     </div>
+  </div>
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src="../node_modules/angular-animate/angular-animate.js"></script>
+  <script src="../node_modules/angular-aria/angular-aria.js"></script>
+  <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="../node_modules/angular-material/angular-material.js"></script>
+  <script src="../node_modules/angular-ui-grid/ui-grid.js"></script>
 
-    <script src="../node_modules/angular/angular.js"></script>
-    <script src="../node_modules/angular-animate/angular-animate.js"></script>
-    <script src="../node_modules/angular-aria/angular-aria.js"></script>
-    <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="../node_modules/angular-material/angular-material.js"></script>
-    <script src="../node_modules/angular-ui-grid/ui-grid.js"></script>
+  <script src="./src/users/Users.js"></script>
+  <script src="./src/users/UserController.js"></script>
+  <script src="./src/users/UserService.js"></script>
 
-    <script src="./src/users/Users.js"></script>
-    <script src="./src/users/UserController.js"></script>
-    <script src="./src/users/UserService.js"></script>
-
-    <script src="./src/main/App.js"></script>
-    <script src="./src/main/config.router.js"></script>
-    <script src="./src/main/MainCtrl.js"></script>
-    <script src="./src/main/MainService.js"></script>
+  <script src="./src/main/App.js"></script>
+  <script src="./src/main/config.router.js"></script>
+  <script src="./src/main/MainCtrl.js"></script>
+  <script src="./src/main/MainService.js"></script>
 
   </body>
 </html>

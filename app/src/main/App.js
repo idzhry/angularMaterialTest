@@ -1,6 +1,32 @@
 'use strict';
-var app = angular.module('starterApp', ['ngMaterial', 'ui.router', 'ui.grid', 'ui.grid.edit', 'ui.grid.autoResize', 'users']);
+var app = angular.module('starterApp', ['ngMaterial', 'ui.router', 'ui.grid', 'ui.grid.edit', 'ui.grid.autoResize', 'ui.grid.resizeColumns', 'users']);
 
+angular.module('ui.grid').directive('groupGridHeader', ['$compile', '$timeout', '$window', '$document', 'gridUtil', 'uiGridConstants',
+  function ($compile, $timeout, $window, $document, gridUtil, uiGridConstants) {
+    var groupGridHeader = {
+      priority: 0,
+      scope: {
+        colContainer: '='
+      },
+      //require: ['^uiGrid', '^uiGridRenderContainer'],
+      replace: true,
+      compile: function() {
+        return {
+          pre: function ($scope, $elm, $attrs) {
+            var aa = "aa";
+          },
+
+          post: function ($scope, $elm, $attrs, controllers) {
+            //var uiGridCtrl = controllers[0];
+            //var renderContainerCtrl = controllers[1];
+          }
+        };
+      }
+    };
+
+    return groupGridHeader;
+  }
+]);
 // controller for temp test
 (function(){
 
@@ -21,7 +47,7 @@ var app = angular.module('starterApp', ['ngMaterial', 'ui.router', 'ui.grid', 'u
         self.rowBreakFlgMap = {};
       }
       var bMap = self.rowBreakFlgMap;
-      var breakFlg = true;
+      var breakFlg = false;
       if (bMap[rowRenderIndex]) {
         breakFlg = bMap[rowRenderIndex];
       } else {
@@ -30,10 +56,12 @@ var app = angular.module('starterApp', ['ngMaterial', 'ui.router', 'ui.grid', 'u
           for (var j=0;j<keyFields.length;j++) {
             var keyField = keyFields[j];
             if (row.entity[keyField] != renderRow[rowRenderIndex -1].entity[keyField]) {
-              breakFlg = false;
+              breakFlg = true;
               break;
             }
           }
+        } else {
+          breakFlg = true;
         }
         bMap[rowRenderIndex] = breakFlg;
       }
@@ -48,11 +76,6 @@ var app = angular.module('starterApp', ['ngMaterial', 'ui.router', 'ui.grid', 'u
           rtnClass = rtnClass + " group-content";
         }
       }
-      if (rowRenderIndex == grid.renderContainers.body.renderedRows.length -1) {
-        if (groupFields.indexOf(col.name) > -1) {
-          rtnClass = rtnClass + " group-last";
-        }
-      }
       return rtnClass;
 
     };
@@ -61,27 +84,12 @@ var app = angular.module('starterApp', ['ngMaterial', 'ui.router', 'ui.grid', 'u
 
       return self.makeCellClass(grid, row, col, rowRenderIndex
           , colRenderIndex, ["col1","col2"],["col1","col2"]);
-
-      //var renderRow = grid.renderContainers.body.renderedRows;
-      //if (rowRenderIndex == 0) {
-      //  return "group-header";
-      //} else {
-      //  var value1 = row.entity["col1"];
-      //  var value2 = row.entity["col2"];
-      //  var preValue1 = renderRow[rowRenderIndex -1].entity["col1"];
-      //  var preValue2 = renderRow[rowRenderIndex -1].entity["col2"];
-      //  if (value1 == preValue1 && value2 == preValue2) {
-      //    return "group-content";
-      //  } else {
-      //    return "group-header";
-      //  }
-      //}
     }
-
-
-      self.gridOptions = {
+    self.gridOptions = {
       enableSorting: true,
       enableFiltering: true,
+      enableGridMenu: true,
+      headerTemplate: "my-header-templatetemp.html",
       columnVirtualizationThreshold: 50,
       excessRows: 4,
       columnDefs: [
@@ -104,8 +112,9 @@ var app = angular.module('starterApp', ['ngMaterial', 'ui.router', 'ui.grid', 'u
 
     self.gridOptions.onRegisterApi = function(gridApi){
       self.gridApi = gridApi;
-      //gridApi.core.on.rowsVisibleChanged(null,function() {
-      //});
+      gridApi.core.on.rowsRendered(null,function() {
+        self.rowBreakFlgMap = {};
+      });
     };
 
     //var gData = [];
@@ -170,7 +179,7 @@ var app = angular.module('starterApp', ['ngMaterial', 'ui.router', 'ui.grid', 'u
       {col1: "G7col1", col2: "G7col2", col3: "9", col4: "9", col5: "row17", col6: "1111", col7: "1111", col8: "1111", col9: "1111", col10: "1111"},
       {col1: "G7col1", col2: "G7col2", col3: "9", col4: "1", col5: "row18", col6: "1111", col7: "1111", col8: "1111", col9: "1111", col10: "1111"},
       {col1: "G7col1", col2: "G7col2", col3: "1", col4: "1", col5: "row19", col6: "1111", col7: "1111", col8: "1111", col9: "1111", col10: "1111"},
-      {col1: "G8col1", col2: "G8col2", col3: "1", col4: "1", col5: "row20", col6: "1111", col7: "1111", col8: "1111", col9: "1111", col10: "1111"},
+      {col1: "G8col1", col2: "G8col2", col3: "1", col4: "1", col5: "row20", col6: "1111", col7: "1111", col8: "1111", col9: "1111", col10: "1111"}
     ];
     self.gridOptions.data = tData;
 
