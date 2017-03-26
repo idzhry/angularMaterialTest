@@ -29,13 +29,18 @@ angular.module('ui.grid').directive('groupGridHeader', ['$compile', '$timeout', 
                 }
                 if (i == 0) {
                   groupHeaderContainers.push(
-                    {
-                      cols:[],
-                      headerText:"",
-                      firstIndex: 0
-                    }
+                      {
+                        cols:[],
+                        headerText:"",
+                        firstIndex: 0
+                      }
                   );
                   gIdx++;
+                  var headerText = groupHeaders[nowGroupHeaderIndex];
+                  if (!headerText) {
+                    headerText = col.colDef.displayName || col.colDef.name;
+                  }
+                  groupHeaderContainers[gIdx].headerText = headerText;
                 } else {
                   var preCol = renderedColumns[i-1];
                   var preGroupHeaderIndex;
@@ -46,21 +51,21 @@ angular.module('ui.grid').directive('groupGridHeader', ['$compile', '$timeout', 
                   }
                   if (preGroupHeaderIndex != nowGroupHeaderIndex) {
                     groupHeaderContainers.push(
-                      {
-                        cols:[],
-                        headerText:"",
-                        firstIndex: i
-                      }
+                        {
+                          cols:[],
+                          headerText:"",
+                          firstIndex: i
+                        }
                     );
                     gIdx++;
+                    var headerText = groupHeaders[nowGroupHeaderIndex];
+                    if (!headerText) {
+                      headerText = col.colDef.displayName || col.colDef.name;
+                    }
+                    groupHeaderContainers[gIdx].headerText = headerText;
                   }
                 }
                 groupHeaderContainers[gIdx].cols.push(col);
-                var headerText = groupHeaders[nowGroupHeaderIndex];
-                if (!headerText) {
-                  headerText = col.colDef.displayName;
-                }
-                groupHeaderContainers[gIdx].headerText = headerText;
               }
               $scope.groupHeaderContainers = groupHeaderContainers;
             }

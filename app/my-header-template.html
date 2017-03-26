@@ -4,13 +4,19 @@
     <div class="ui-grid-header-viewport">
       <div class="ui-grid-header-canvas">
         <div class="ui-grid-header-cell-wrapper" ng-style="colContainer.headerCellWrapperStyle()">
-          <div role="row" class="ui-grid-header-cell-row">
+          <div role="row" class="ui-grid-header-cell-row" group-grid-header>
+            <div class="my-grid-header-cell ui-grid-clearfix" ng-repeat="(gIdx,groupHeaderContainer) in groupHeaderContainers">
 
+              <div class="my-grid-header-table">
+                <div ng-if="!groupHeaderContainer.isRowHeaderColumn" class="my-grid-header-caption">{{groupHeaderContainer.headerText}}</div>
+                <div class="my-grid-header-row">
+                  <div class="ui-grid-header-cell ui-grid-clearfix"
+                       ng-repeat="(cIdx,col) in groupHeaderContainer.cols track by col.uid" ui-grid-header-cell col="col"
+                       render-index="groupHeaderContainer.firstIndex + cIdx"></div>
+                </div>
+              </div>
 
-            <div class="ui-grid-header-cell ui-grid-clearfix"
-                 ng-repeat="col in colContainer.renderedColumns track by col.uid" ui-grid-header-cell col="col"
-                 render-index="$index"></div>
-
+            </div>
           </div>
         </div>
       </div>

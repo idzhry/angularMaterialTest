@@ -32,32 +32,58 @@ html, body {
   border-color: #d4d4d4;
 }
 
-.custom .my-grid-header-caption {
-  border:1px solid grey;
-  caption-side: top;
-  display: table-caption;
-  text-align: center;
-}
-
-.custom .my-grid-header-cell {
-  position: relative;
-  box-sizing: border-box;
-  background-color: inherit;
-  display: table-cell;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 0;
-}
 .custom .my-grid-header-table {
-  position: relative;
   display: table;
   box-sizing: border-box;
   height: 100%;
 }
-
+.custom .my-grid-header-caption {
+  caption-side: top;
+  display: table-caption;
+  text-align: center;
+  border-bottom: 1px solid #aeaeae;
+  border-right: 1px solid #aeaeae;
+  white-space: nowrap ;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .custom .my-grid-header-row {
   display: table-row;
+}
+.custom .my-grid-header-cell {
+  box-sizing: border-box;
+  background-color: inherit;
+  display: table-cell;
+}
+.custom .ui-grid-pinned-container-right .my-grid-header-cell:first-child .my-grid-header-caption {
+  border-left:1px solid #aeaeae;
+}
+.custom .ui-grid-pinned-container-left .my-grid-header-cell:last-child .my-grid-header-caption {
+  border-right: 2px solid #aeaeae;
+}
+
+.ui-grid-draggable-row-target {
+  opacity: 0.5 !important;
+}
+.ui-grid-draggable-row {
+  height: 30px;
+}
+.ui-grid-draggable-row-over {
   position: relative;
+}
+.ui-grid-draggable-row-over:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px dotted #AAA;
+}
+.ui-grid-draggable-row-over--above:before {
+  top: 0;
+}
+.ui-grid-draggable-row-over--below:before {
+  bottom: 0;
 }
