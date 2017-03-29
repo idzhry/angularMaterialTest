@@ -1,0 +1,63 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul side-navigation class="nav metismenu" id="side-menu">
+      <li class="nav-header">
+        <div class="dropdown profile-element" dropdown>
+          <a class="dropdown-toggle" dropdown-toggle href>
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">{{user.userId}}</strong>
+                             </span>
+                                <span class="text-muted text-xs block">Example menu<b class="caret"></b></span>
+                            </span>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight m-t-xs">
+            <li><a href="">Logout</a></li>
+          </ul>
+        </div>
+        <div class="logo-element">
+          IN+
+        </div>
+      </li>
+
+      <li ui-sref-active="active">
+        <a ui-sref="index.main"><i class="fa fa-laptop"></i> <span class="nav-label">Main page</span> </a>
+      </li>
+      <li ui-sref-active="active">
+        <a><i class="fa fa-desktop"></i> <span class="nav-label">考勤信息</span><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+          <li><a ui-sref="index.attendanceList">年度考勤信息</a></li>
+          <li><a ui-sref="index.monthlyAttendance">月考勤信息</a></li>
+          <li><a ui-sref="index.fillingAttendance">考勤填写</a></li>
+          <li><a ui-sref="index.attendanceRecognition">考勤承认</a></li>
+        </ul>
+      </li>
+      <li ui-sref-active="active">
+        <a><i class="fa fa-desktop"></i> <span class="nav-label">项目管理</span><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+          <li><a ui-sref="index.projectList">项目一览</a></li>
+        </ul>
+      </li>
+      <li ui-sref-active="active">
+        <a><i class="fa fa-desktop"></i> <span class="nav-label">职员管理</span><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+          <li><a ui-sref="index.staffList">职员一览</a></li>
+        </ul>
+      </li>
+      <li>
+        <a><i class="fa fa-desktop"></i> <span class="nav-label">公共信息</span><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+          <li><a>座位图</a></li>
+        </ul>
+      </li>
+      <li>
+        <a><i class="fa fa-desktop"></i> <span class="nav-label">个人设置</span><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+          <li><a>个人信息变更</a></li>
+          <li><a>密码变更</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+</nav>

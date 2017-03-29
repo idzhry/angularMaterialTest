@@ -1,0 +1,151 @@
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-lg-12">
+              <table class="table table-bordered" style="margin-bottom: 0px;">
+                <tbody>
+                <tr>
+                  <td class="table-td-title" style="width: 60px;">项目</td>
+                  <td class="table-td-data" style="width: 100px;">
+                    <select class="input-sm form-control" name="account">
+                      <option>option 1</option>
+                      <option>option 2</option>
+                      <option>option 3</option>
+                      <option>option 4</option>
+                    </select>
+                  </td>
+                  <td class="table-td-title" style="width: 50px;">日期</td>
+                  <td class="table-td-data" style="width: 300px;">
+                    <div class="input-daterange input-group" id="datepicker">
+                      <input type="text" class="input-sm form-control" name="start" value="05/14/2014">
+                      <span class="input-group-addon">to</span>
+                      <input type="text" class="input-sm form-control" name="end" value="05/22/2014">
+                    </div>
+                  </td>
+                  <td class="table-td-title" style="width: 80px;">承认状态</td>
+                  <td class="table-td-data form-inline">
+                    <div class="radio radio-info">
+                      <input type="radio" name="radio1" id="radio1" value="option1" checked="">
+                      <label for="radio1">未承认</label>
+                    </div>
+                    <div class="radio radio-info">
+                      <input type="radio" name="radio1" id="radio2" value="option2">
+                      <label for="radio1">已承认</label>
+                    </div>
+                    <div class="radio radio-info">
+                      <input type="radio" name="radio1" id="radio3" value="option3">
+                      <label for="radio1">全部</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td-title">员工号</td>
+                  <td class="table-td-data" colspan="2">
+                    <div class="input-group" style="width: 150px;">
+                      <input type="text" class="input-sm form-control"> <span class="input-group-btn">
+                      <button type="button" class="btn btn-sm btn-primary"><span class="fa fa-male"></span></button> </span>
+                    </div>
+                  </td>
+                  <td class="table-td-data" colspan="3">
+                    <button type="button" class="btn btn-sm btn-info">查询</button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-lg-12">
+              <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th style="width: 10px;"><input id="checkbox7" type="checkbox"></th>
+                  <th>申请者</th>
+                  <th>申请类型</th>
+                  <th>申请日期</th>
+                  <th>申请时长</th>
+                  <th>承认状态</th>
+                  <th>承认/取消</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td>某某某</td>
+                  <td>加班申请</td>
+                  <td>2016/01/01</td>
+                  <td>2.0</td>
+                  <td>未承认</td>
+                  <td><a><span class="badge badge-warning">承认</span></a></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>2016/01/01</td>
+                  <td>8:25</td>
+                  <td>0</td>
+                  <td>0.0</td>
+                  <td>已承认</td>
+                  <td><a><span class="badge badge-warning">取消</span></a></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>2016/01/01</td>
+                  <td>8:25</td>
+                  <td>0</td>
+                  <td>0.0</td>
+                  <td>已承认</td>
+                  <td><a><span class="badge badge-warning">取消</span></a></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>2016/01/01</td>
+                  <td>8:25</td>
+                  <td>0</td>
+                  <td>0.0</td>
+                  <td>已承认</td>
+                  <td><a><span class="badge badge-warning">取消</span></a></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>2016/01/01</td>
+                  <td>8:25</td>
+                  <td>0</td>
+                  <td>0.0</td>
+                  <td>已承认</td>
+                  <td><a><span class="badge badge-warning">取消</span></a></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>2016/01/01</td>
+                  <td>8:25</td>
+                  <td>0</td>
+                  <td>0.0</td>
+                  <td>已承认</td>
+                  <td><a><span class="badge badge-warning">取消</span></a></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="pull-right">
+                <button ui-sref="index.fillingAttendance" type="button" class="btn btn-sm btn-info">批量承认</button>
+                <button type="button" class="btn btn-sm btn-info">返回</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

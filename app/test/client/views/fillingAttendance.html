@@ -1,0 +1,187 @@
+<div class="wrapper wrapper-content animated fadeInUp">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>基本信息</h5>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-xs-2" style="text-align: center">
+              <small class="stats-label">考勤日期</small>
+              <h4><span>2016.07.01</span>&nbsp;<span><i class="fa fa-calendar"></i></span></h4>
+            </div>
+            <div class="col-xs-2" style="text-align: center">
+              <small class="stats-label">出勤时间</small>
+              <h4>08:30</h4>
+            </div>
+            <div class="col-xs-2" style="text-align: center">
+              <small class="stats-label">退勤时间</small>
+              <h4>17:44</h4>
+            </div>
+            <div class="col-xs-2" style="text-align: center">
+              <small class="stats-label">日期类型</small>
+              <h4>工作日</h4>
+            </div>
+            <div class="col-xs-2" style="text-align: center">
+              <small class="stats-label">一级承认者</small>
+              <h4>王玉琢</h4>
+            </div>
+            <div class="col-xs-2" style="text-align: center">
+              <small class="stats-label">二级承认者</small>
+              <h4>王玉琢</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>申请信息</h5>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-xs-3" style="text-align: center">
+              <small class="stats-label">加班申请</small>
+              <h4><span>18:00 - 20:00</span>&nbsp;<span><i class="fa fa-edit"></i></span></h4>
+            </div>
+            <div class="col-xs-2" style="text-align: center">
+              <small class="stats-label">加班类型</small>
+              <select class="form-control" name="account" style="height: 25px">
+                <option></option>
+                <option>晚加班</option>
+                <option>休息日加班</option>
+                <option>节假日加班</option>
+                <option>通宵加班</option>
+              </select>
+            </div>
+            <div class="col-xs-4" style="text-align: center">
+              <small class="stats-label">原因</small>
+              <h4>加班赶进度</h4>
+            </div>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-xs-3" style="text-align: center">
+              <small class="stats-label">请假申请</small>
+              <h4>08:30 - 17:30</h4>
+            </div>
+            <div class="col-xs-2" style="text-align: center">
+              <small class="stats-label">请假类型</small>
+              <select class="form-control" name="account" style="height: 25px">
+                <option></option>
+                <option>晚加班换休</option>
+                <option>周末换休</option>
+              </select>
+            </div>
+            <div class="col-xs-4" style="text-align: center">
+              <small class="stats-label">原因</small>
+              <h4>感冒发烧了</h4>
+            </div>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-xs-3" style="text-align: center">
+              <small class="stats-label">外出工作申请</small>
+              <h4>08:30 - 17:30</h4>
+            </div>
+            <div class="col-xs-3 b-r" style="text-align: center">
+              <small class="stats-label">理由</small>
+              <h4>外勤一个月</h4>
+            </div>
+            <div class="col-xs-3" style="text-align: center">
+              <small class="stats-label">补卡申请</small>
+              <h4>08:30 - 17:30</h4>
+            </div>
+            <div class="col-xs-3" style="text-align: center">
+              <small class="stats-label">理由</small>
+              <h4>忘记打卡了</h4>
+            </div>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="pull-right">
+              <button ui-sref="index.monthlyAttendance" type="button" class="btn btn-sm btn-info">提交申请</button>
+              <button ui-sref="index.monthlyAttendance" type="button" class="btn btn-sm btn-info">删除考勤</button>
+              <button type="button" class="btn btn-sm btn-info">返回</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>考勤日志信息</h5>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-xs-4 b-r" style="text-align: center">
+              <small class="stats-label">正常工时</small>
+              <h4>8.0</h4>
+            </div>
+            <div class="col-xs-4 b-r" style="text-align: center">
+              <small class="stats-label">晚加班工时</small>
+              <h4>1.0</h4>
+            </div>
+            <div class="col-xs-4" style="text-align: center">
+              <small class="stats-label">迟到/早退</small>
+              <h4></h4>
+            </div>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-xs-4 b-r" style="text-align: center">
+              <small class="stats-label">通宵加班工时</small>
+              <h4>8.0</h4>
+            </div>
+            <div class="col-xs-4 b-r" style="text-align: center">
+              <small class="stats-label">晚加班换休工时</small>
+              <h4>1.0</h4>
+            </div>
+            <div class="col-xs-4" style="text-align: center">
+              <small class="stats-label">周末加班工时</small>
+              <h4></h4>
+            </div>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-xs-4 b-r" style="text-align: center">
+              <small class="stats-label">节假日工时</small>
+              <h4>8.0</h4>
+            </div>
+            <div class="col-xs-4 b-r" style="text-align: center">
+              <small class="stats-label">外出工时</small>
+              <h4>1.0</h4>
+            </div>
+            <div class="col-xs-4" style="text-align: center">
+              <small class="stats-label">集体补卡</small>
+              <h4></h4>
+            </div>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-xs-4 b-r" style="text-align: center">
+              <small class="stats-label">休假时间</small>
+              <h4>8.0</h4>
+            </div>
+            <div class="col-xs-4 b-r" style="text-align: center">
+              <small class="stats-label">剩余换休时间</small>
+              <h4>1.0</h4>
+            </div>
+            <div class="col-xs-4" style="text-align: center">
+              <small class="stats-label">集体补卡</small>
+              <h4></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

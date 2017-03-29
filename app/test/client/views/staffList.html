@@ -1,0 +1,133 @@
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-lg-9">
+              <table class="table table-bordered" style="margin-bottom: 0px;">
+                <tbody>
+                <tr>
+                  <td class="table-td-title" style="width: 80px;">职员编号</td>
+                  <td class="table-td-data" style="width: 120px;">
+                    <input type="text" class="input-sm form-control" value="00045">
+                  </td>
+                  <td class="table-td-title" style="width: 80px;">职员姓名</td>
+                  <td class="table-td-data" style="width: 240px;">
+                    <input type="text" class="input-sm form-control" value="王玉琢">
+                  </td>
+                  <!--<td class="table-td-data">-->
+                    <!--<button type="button" class="btn btn-sm btn-info">查询</button>-->
+                  <!--</td>-->
+                  <td class="table-td-title" style="width: 80px;">公司名称</td>
+                  <td class="table-td-data">
+                    <select class="input-sm form-control" name="account">
+                      <option></option>
+                      <option>大连新思软件技术有限公司</option>
+                      <option>大连嘉友信息技术</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td-title">职员性质</td>
+                  <td class="table-td-data">
+                    <select class="input-sm form-control" name="account">
+                      <option></option>
+                      <option>实习</option>
+                      <option>试用</option>
+                      <option>正式</option>
+                      <option>协力</option>
+                    </select>
+                  </td>
+                  <td class="table-td-title">在职状态</td>
+                  <td class="table-td-data form-inline">
+                    <div class="radio radio-info">
+                      <input type="radio" name="radio1" id="radio1" value="option1" checked="">
+                      <label for="radio1">在职</label>
+                    </div>
+                    <div class="radio radio-info">
+                      <input type="radio" name="radio1" id="radio2" value="option2">
+                      <label for="radio1">离职</label>
+                    </div>
+                    <div class="radio radio-info">
+                      <input type="radio" name="radio1" id="radio3" value="option3">
+                      <label for="radio1">全部</label>
+                    </div>
+                  </td>
+                  <!--<td class="table-td-data">-->
+                  <!--<button type="button" class="btn btn-sm btn-info">查询</button>-->
+                  <!--</td>-->
+                  <td class="table-td-title">所属部门</td>
+                  <td class="table-td-data">
+                    <select class="input-sm form-control" name="account">
+                      <option></option>
+                      <option>第一开发部</option>
+                      <option>第二开发部</option>
+                      <option>第三开发部</option>
+                      <option>国内项目开发部</option>
+                    </select>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-lg-3" style="height: 74px; top: 45px;">
+              <button type="button" class="btn btn-sm btn-info">查询</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-lg-12">
+              <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th style="width: 10px;"></th>
+                  <th style="width: 70px;">职员编号</th>
+                  <th style="width: 70px;">职员姓名</th>
+                  <th style="width: 170px;">公司名称</th>
+                  <th style="width: 110px;">部门名称</th>
+                  <th style="width: 50px;">岗位</th>
+                  <th style="width: 70px;">职员性质</th>
+                  <th style="width: 70px;">在职状态</th>
+                  <th style="width: 145px;">电子邮件</th>
+                  <th>预留</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>
+                    <input type="radio">
+                  </td>
+                  <td>00045</td>
+                  <td>王玉琢</td>
+                  <td>大连新思软件技术有限公司</td>
+                  <td>国内项目开发部</td>
+                  <td>PL</td>
+                  <td>正式</td>
+                  <td>在职</td>
+                  <td>wangyzh@bis.com.cn</td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="pull-right">
+                <button ui-sref="index.staffDetail" type="button" class="btn btn-sm btn-info">添加</button>
+                <button ui-sref="index.staffDetail" type="button" class="btn btn-sm btn-info">修改</button>
+                <button ui-sref="index.staffDetail" type="button" class="btn btn-sm btn-info">查看</button>
+                <button type="button" class="btn btn-sm btn-info">批量修改</button>
+                <button type="button" class="btn btn-sm btn-info">返回</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

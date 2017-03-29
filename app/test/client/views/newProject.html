@@ -1,0 +1,174 @@
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="ibox float-e-margins">
+        <div class="ibox-heading">
+          <h4>基本信息</h4>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-lg-12">
+              <table class="table table-bordered">
+                <tbody>
+                <tr>
+                  <td class="table-td-title" style="width: 100px;">项目名</td>
+                  <td class="table-td-data" style="">
+                    <input type="text" class="input-sm form-control" value="test项目">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td-title">所属部门</td>
+                  <td class="table-td-data">
+                    <select class="input-sm form-control" name="account">
+                      <option></option>
+                      <option>第一开发部</option>
+                      <option>第二开发部</option>
+                      <option>第三开发部</option>
+                      <option>国内开发部</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td-title">立项人</td>
+                  <td class="table-td-data">
+                    <input type="text" class="input-sm form-control" value="王玉琢" disabled="disabled">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td-title">预定工数</td>
+                  <td class="table-td-data">
+                    <div class="form-inline">
+                      <div class="form-group">
+                        <input type="text" class="input-sm form-control" value="500">
+                        <span>人日</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td-title">项目开始时间</td>
+                  <td class="table-td-data">
+                    <div class="form-inline">
+                      <div class="form-group">
+                        <input type="text" class="input-sm form-control" value="2016/07/21">
+                        <a><span class="fa fa-calendar"></span></a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td-title">预定结束时间</td>
+                  <td class="table-td-data">
+                    <div class="form-inline">
+                      <div class="form-group">
+                        <input type="text" class="input-sm form-control" value="2016/10/21">
+                        <a><span class="fa fa-calendar"></span></a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td-title">项目经理</td>
+                  <td class="table-td-data">
+                    <div class="form-inline">
+                      <div class="form-group">
+                        <input type="text" class="input-sm form-control" value="王玉琢" disabled="disabled">
+                        <a><span class="fa fa-male" style="font-size: 16px;"></span></a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="">
+                <button type="button" class="btn btn-sm btn-info">建立</button>
+                <button type="button" class="btn btn-sm btn-info">返回</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="tabs-container">
+        <tabset>
+          <tab heading="成员管理">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <button class="btn btn-sm btn-info " type="button"><i class="fa fa-plus"></i>&nbsp;添加新成员</button>
+                </div>
+              </div>
+              <p></p>
+              <div class="row">
+                <div class="col-lg-12">
+                  <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                      <th style="width: 60px;">姓名</th>
+                      <th style="width: 80px;">职位</th>
+                      <th style="width: 110px;">角色</th>
+                      <th style="width: 130px;">权限</th>
+                      <th style="width: 110px;">开始日期</th>
+                      <th style="width: 110px;">结束日期</th>
+                      <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td><span>王玉琢</span></td>
+                      <td>项目经理</td>
+                      <td>
+                        <select class="input-sm form-control" name="account">
+                          <option></option>
+                          <option>软件工程师</option>
+                          <option>系统工程师</option>
+                          <option>项目经理</option>
+                        </select>
+                      </td>
+                      <td>
+                        <select class="input-sm form-control" name="account">
+                          <option></option>
+                          <option>erp系统管理者</option>
+                        </select>
+                      </td>
+                      <td>
+                        <input type="text" class="input-sm form-control" value="2016/07/21">
+                      </td>
+                      <td>
+                        <input type="text" class="input-sm form-control" value="2016/10/21">
+                      </td>
+                      <td>
+                        <a><span class="badge badge-warning">删除</span></a>
+                        <a><span class="badge badge-warning">查看</span></a>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="">
+                    <button type="button" class="btn btn-sm btn-info">保存</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tab>
+          <tab heading="保留">
+            <div class="panel-body">
+              <strong>保留</strong>
+              <p>这里应该有内容</p>
+            </div>
+          </tab>
+        </tabset>
+
+      </div>
+    </div>
+  </div>
+</div>
